@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 import { getServerSideTranslations } from './utils/get-serverside-translations';
 
-import { ArticleHero, ArticleTileGrid } from '@src/components/features/article';
+import { ArticleFeatured, ArticleTileGrid } from '@src/components/features/article';
 import { SeoFields } from '@src/components/features/seo';
 import { Container } from '@src/components/shared/container';
 import { PageBlogPostOrder } from '@src/lib/__generated/sdk';
@@ -25,15 +25,9 @@ const Page = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
       {page.seoFields && <SeoFields {...page.seoFields} />}
       <Container>
         <Link href={`/${page.featuredBlogPost.slug}`}>
-          <ArticleHero article={page.featuredBlogPost} />
+          <ArticleFeatured article={page.featuredBlogPost} />
         </Link>
       </Container>
-
-      {/* Tutorial: contentful-and-the-starter-template.md */}
-      {/* Uncomment the line below to make the Greeting field available to render */}
-      {/*<Container>*/}
-      {/*  <div className="my-5 bg-colorTextLightest p-5 text-colorBlueLightest">{page.greeting}</div>*/}
-      {/*</Container>*/}
 
       <Container className="my-8  md:mb-10 lg:mb-16">
         <h2 className="mb-4 md:mb-6">{t('landingPage.latestArticles')}</h2>
@@ -49,6 +43,7 @@ export const getStaticProps: GetStaticProps = async ({ locale, draftMode: previe
 
     const landingPageData = await gqlClient.pageLanding({ locale, preview });
     const page = landingPageData.pageLandingCollection?.items[0];
+    console.log('page: ', page);
 
     const blogPostsData = await gqlClient.pageBlogPostCollection({
       limit: 6,

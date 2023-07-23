@@ -1,0 +1,24 @@
+{
+  "article": {
+    "relatedArticles": "Posts Relacionados",
+    "featured": "em destaque"
+  },
+  "landingPage": {
+    "latestArticles": "Ultimos posts"
+  },
+  "common": {
+    "homepage": "Homepage",
+    "regionalSettings": "Configurações de região",
+    "language": "Linguagem",
+    "languageDrawer": "Abrir configurador de linguas"
+  },
+  "footer": {
+    "aboutUs": "Entre em contato",
+    "description": "",
+    "powerBy": "👨‍💻 made with ❤️ - herbert henrique"
+  },
+  "notFound": {
+    "title": "Página não encontrada",
+    "description": "This page doesn't seem to exist. <0>Click here</0> to go back the homepage."
+  }
+}

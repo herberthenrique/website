@@ -14,7 +14,10 @@ const colors = Object.entries(tokens).reduce((acc, [key, value]) => {
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    colors,
+    colors: {
+      primary: '#421e85',
+      ...colors,
+    },
     extend: {
       maxWidth: {
         '8xl': '90rem',

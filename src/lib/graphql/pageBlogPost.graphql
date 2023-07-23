@@ -11,6 +11,10 @@ fragment ReferencePageBlogPostFields on PageBlogPost {
   publishedDate
   title
   shortDescription
+  featuredContentHomepage {
+    json
+  }
+
   featuredImage {
     ...ImageFields
   }
@@ -35,6 +39,9 @@ fragment PageBlogPostFields on PageBlogPost {
   shortDescription
   featuredImage {
     ...ImageFields
+  }
+  featuredContentHomepage {
+    json
   }
   content {
     json
