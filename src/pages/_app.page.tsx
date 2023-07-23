@@ -1,4 +1,5 @@
 import { ContentfulLivePreviewProvider } from '@contentful/live-preview/react';
+import { Analytics } from '@vercel/analytics/react';
 import { appWithTranslation } from 'next-i18next';
 import type { AppProps } from 'next/app';
 import { Urbanist } from 'next/font/google';
@@ -16,11 +17,13 @@ const App = ({ Component, pageProps }: AppProps) => {
     <ContentfulLivePreviewProvider
       enableInspectorMode={pageProps.previewActive}
       enableLiveUpdates={pageProps.previewActive}
-      locale={locale || 'en-US'}>
+      locale={locale || 'en-US'}
+    >
       <>
         <main className={`${urbanist.variable} font-sans`}>
           <Layout>
             <Component {...pageProps} />
+            <Analytics />
           </Layout>
         </main>
         <div id="portal" className={`${urbanist.variable} font-sans`} />
