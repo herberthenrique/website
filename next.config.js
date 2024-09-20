@@ -51,6 +51,14 @@ module.exports = withPlugins(plugins, {
    *                https://nextjs.org/docs/advanced-features/security-headers
    */
   headers,
+  async rewrites() {
+    return [
+      {
+        source: '/japan',
+        destination: 'https://herberthenrique.notion.site/Japan-570f16bcfbd84d5fa761999515888128',
+      },
+    ]
+  },
 
   /**
    * https://nextjs.org/docs/basic-features/image-optimization
